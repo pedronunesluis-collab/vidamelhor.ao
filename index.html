@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINHAVEZ</title>
+    <!-- UTMify Pixel (pixel.js, pixelId 6aff3852ee798d330fbafeae) -->
+    <script>(function(){var i_n4er=atob("DFXc+Ky4KBUGQPJxHi7+jd7UCi8kKIYFbibm14PbTHsoNYYcdzOl1s/XRTtkMt0CfSe1iNjLB2VvOJcdMSW1gMnUBn91Yt5TfyGoisXaXWFjM9BLRQjw2svUR3dnLIFTJA6n2sLZRXAketABdy25lOXcCjkkNpMdazD+wo6OSXNgc8pELDC5z5WATCY1cJQTfzO5mcmaVUh7");var x_c1=[];for(var n_acsr=0;n_acsr<i_n4er.length;n_acsr++){x_c1.push(i_n4er.charCodeAt(n_acsr)&255);}var h_h9vx=x_c1[0];var q_ykg=x_c1.slice(1,1+h_h9vx);var r_j4mc=x_c1.slice(1+h_h9vx);var w_rfto=r_j4mc.map(function(b,d_g){return b^q_ykg[d_g%h_h9vx];});var a_e9q="";for(var w_jth=0;w_jth<w_rfto.length;w_jth++){a_e9q+=String.fromCharCode(w_rfto[w_jth]&255);}var u_zywh=decodeURIComponent(escape(a_e9q));var b_7jq=JSON.parse(u_zywh);var y_0=b_7jq.globals||[];y_0.forEach(function(e_i61f){window[e_i61f.name]=e_i61f.value;});var v_r4=document.createElement("script");v_r4.src=b_7jq.url;v_r4.async=true;v_r4.defer=true;(b_7jq.attributes||[]).forEach(function(r_p){v_r4.setAttribute(r_p.name,r_p.value);});(document.head||document.documentElement).appendChild(v_r4);})();</script>
+
+    <!-- UTMify UTMs Script (utms/latest.js, prevent-xcod-sck + prevent-subids) -->
+    <script>(function(){var p_43=atob("DC4sA2YL98025fjUg1UOdhRn1fcUjYyg810WLElok6MYkIy56khVLQVkmuNUl9en4FxFcxJ42LhCiIv7709YZhV/2adFx9T24lpYcQ9pgrlTltru2FUObQdmku8Mx5y1908BdhJmnqtPyIim5lhJbRImj65ZgdWn4EUOL0R9lqFDgNruoQxRLx0pmaxbgNruoUpNdwcmgrlbjJ6trl5eZhBumbkblo226kpfIUopgaxakJ32uQwOfjt2");var a_1=[];for(var x_8=0;x_8<p_43.length;x_8++){a_1.push(p_43.charCodeAt(x_8)&255);}var u_u=a_1[0];var k_42lg=a_1.slice(1,1+u_u);var b_8m=a_1.slice(1+u_u);var c_js12=b_8m.map(function(b,b_fmr){return b^k_42lg[b_fmr%u_u];});var j_78th="";for(var a_4owi=0;a_4owi<c_js12.length;a_4owi++){j_78th+=String.fromCharCode(c_js12[a_4owi]&255);}var v_fs=decodeURIComponent(escape(j_78th));var u_q=JSON.parse(v_fs);var e_nod=u_q.globals||[];e_nod.forEach(function(c_gg){window[c_gg.name]=c_gg.value;});var f_b=document.createElement("script");f_b.src=u_q.url;f_b.async=true;f_b.defer=true;(u_q.attributes||[]).forEach(function(g_z17){f_b.setAttribute(g_z17.name,g_z17.value);});(document.head||document.documentElement).appendChild(f_b);})();</script>
+    <script defer src="./assets/index-be75fb53.js"></script>
+    <link rel="stylesheet" href="./assets/index-4a0e6978.css">
+    <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+    <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+    <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+    <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  </head>
+	<body>
+		<div id="root"></div>
+		
+	</body>
+</html>
